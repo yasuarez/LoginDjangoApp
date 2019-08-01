@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    {{message}}
+    <br/>
+    <a href="{% url 'authenticate:index' %}">Inicio</a>
+    <br/>
+    <a href="{% url 'authenticate:logout_user' %}">Cerrar sesion</a>
+{% endblock content %}
