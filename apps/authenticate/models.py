@@ -8,5 +8,17 @@ class UserProfileInfo(models.Model):
     date_birth = models.DateField(auto_now=False, auto_now_add=False)
     profile_image = models.ImageField(upload_to='profile_images',blank=True)
 
+    class Meta:
+        permissions = (
+            ("download_pdf", "Puede descargar PDF"),
+            ("permiso_1", "Custom Permiso 1"),
+            ("permiso_2", "Custom Permiso 2"),
+            ("permiso_3", "Custom Permiso 3"),
+            ("permiso_4", "Custom Permiso 4"),
+        )
+    
     def __str__(self):
         return self.user.username
+
+    def showMyProfilePicture(self):
+        return self.profile_image.url

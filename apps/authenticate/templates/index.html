@@ -41,6 +41,10 @@
         {% if user.is_authenticated %}
           <img src="{{ request.session.myProfilePicture }}" width="100">
         {% endif %}
+        {% if download_pdf %}
+          <br>
+          <a href="{% url 'authenticate:export_pdf' %}">Download</a>
+        {% endif %}
         <p class="lead">By Yeison Suarez</p>
       </div>
     </div>
